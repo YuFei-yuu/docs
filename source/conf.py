@@ -66,7 +66,7 @@ html_theme = 'sphinxawesome_theme'
 html_static_path = ['_static']
 
 html_logo = '_static/yu.png'
-html_favicon = '_static/yu.png'
+#html_favicon = '_static/yu.png'
 
 html_theme_options = {
 #   "show_nav_level": 4,
