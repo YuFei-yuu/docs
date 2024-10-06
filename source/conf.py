@@ -18,7 +18,8 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx_copybutton',
     'sphinx.ext.mathjax',
-    'myst_parser'
+    'myst_parser',
+    'sphinxawesome-theme'
 ]
 
 myst_enable_extensions = [
@@ -58,7 +59,10 @@ latex_elements = {
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_permalinks_icon = '<span>#</span>'
+html_theme = 'sphinxawesome_theme'
+
+#html_theme = 'alabaster'
 html_static_path = ['_static']
 
 html_logo = '_static/yu.png'
