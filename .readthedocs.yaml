@@ -33,5 +33,4 @@ formats:
 python:
    install:
    - requirements: requirements.txt
-   - pip: 
-        - sphinxawesome-theme==3.3.7
+

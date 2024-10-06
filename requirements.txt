@@ -16,4 +16,4 @@ sphinx-press-theme==0.8.0
 myst-parser==1.0.0
 linkify-it-py==1.0.3
 pydata-sphinx-theme==0.13.3
-sphinxawesome-theme==3.3.7
+sphinxawesome-theme==1.19.3
