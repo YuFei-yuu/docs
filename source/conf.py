@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'SCURM_KnowledgeBase'
-copyright = '2024, SCURM'
-author = 'SCURM'
+project = 'FlyingFish'
+copyright = 'v0.1'
+author = 'yu'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -58,11 +58,11 @@ latex_elements = {
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "pydata_sphinx_theme"
+html_theme = 'alabaster'
 html_static_path = ['_static']
 
-html_logo = '_static/scurm.png'
-html_favicon = '_static/scurm.png'
+html_logo = '_static/yu.png'
+html_favicon = '_static/yu.png'
 
 html_theme_options = {
 #   "show_nav_level": 4,
