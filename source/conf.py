@@ -19,7 +19,8 @@ extensions = [
     'sphinx_copybutton',
     'sphinx.ext.mathjax',
     'myst_parser',
-    'sphinxawesome-theme'
+    'sphinxawesome-theme',
+    "sphinxawesome.deprecated"
 ]
 
 myst_enable_extensions = [
