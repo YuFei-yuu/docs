@@ -8,6 +8,7 @@
 .. toctree::
    :maxdepth: 2
 
-   about/index.rst
+   public/index.rst
+   private/index.rst
 
 

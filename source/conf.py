@@ -66,6 +66,7 @@ html_favicon = '_static/yu.png'
 
 html_theme_options = {
 #   "show_nav_level": 4,
+    "footer": ["author"],
     #"footer_start": ["author"],
     #"footer_center":[],
     #"footer_end":["author"],
