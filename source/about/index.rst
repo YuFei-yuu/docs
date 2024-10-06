@@ -6,6 +6,7 @@ About
 .. toctree::
    :maxdepth: 1
 
+   docker.md
    simple_tut.md
    advanced_tut.md
 
