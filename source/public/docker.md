@@ -1,4 +1,3 @@
-# docker 安装过程记录
 
 ### 配置docker环境
 
@@ -58,10 +57,16 @@
         exit
 
 
-**启动命令:docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -v F:\rm:/data huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408 bash**
+**启动命令:**
+```shell
+docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -v F:\rm:/data huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408 bash
+```
 在I:/rm文件夹中挂载data
 
-**终端连接到容器：docker attach rm**
+**终端连接到容器：**
+```shell
+docker attach rm
+```
 
 **退出容器：exit**
 
@@ -77,9 +82,9 @@ ipconfig改成本机ip
 
 
 X11apps 测试用
-
+```shell
     apt-get update && apt-get install -y x11-apps
-
+```
 
 ---
 
