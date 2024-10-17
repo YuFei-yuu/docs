@@ -6,7 +6,7 @@
 ===============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    public/index.rst
    private/index.rst
