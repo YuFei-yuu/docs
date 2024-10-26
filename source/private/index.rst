@@ -6,7 +6,8 @@
 .. toctree::
    :maxdepth: 1
 
-   10.6.md
-   10.15.md
+   w6.md
+   w7.md
+   w8.md
 
 
