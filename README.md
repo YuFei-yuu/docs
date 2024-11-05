@@ -2,7 +2,8 @@
 
 ## 构建状态
 
-[![Documentation Status](https://readthedocs.org/projects/scurm-knowledgebase/badge/?version=latest)](https://scurm-knowledgebase.readthedocs.io/zh/latest/?badge=latest) [SCURM知识库](https://scurm-knowledgebase.readthedocs.io/zh/latest/)
+[ReadTheDOCS](https://readthedocs.org/projects/flyingfish/)<BR>
+[一只飞鱼](https://scurm-knowledgebase.readthedocs.io/zh/latest/)
 
 ## 使用方式
 
@@ -21,4 +22,16 @@
       ./template.md
    ```
 
-推送，等待自动构建完成，访问[https://scurm-knowledgebase.readthedocs.io/zh/latest/](https://scurm-knowledgebase.readthedocs.io/zh/latest/)查看效果。
+## 一些命令
+``` shell
+./make html #在本地.\build\html\index.html预览
+```
+``` shell
+git add .
+```
+``` shell
+git commit -m "bulabula"
+```
+``` shell
+git push origin master 
+```

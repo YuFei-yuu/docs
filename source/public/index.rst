@@ -7,5 +7,6 @@
    :maxdepth: 1
 
    docker.md
-   
+   nuc.md
+   todo.md
 
