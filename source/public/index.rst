@@ -7,6 +7,8 @@
    :maxdepth: 1
 
    docker.md
+   cloud.md
+   lidar.md
    nuc.md
    todo.md
 
