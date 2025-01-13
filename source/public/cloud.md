@@ -26,3 +26,4 @@
     ```bash
     ros2 run nav2_map_server map_saver_cli -t /projected_map -f test_map --fmt png
     ```
+    - 这个有问题 用ps吧
