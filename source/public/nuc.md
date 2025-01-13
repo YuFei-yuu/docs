@@ -1,5 +1,24 @@
 # 待完成的从0开始配置舒适好用的NUC环境
 
+## GUI
+```shell
+sudo apt install x11-xserver-utils
+```
+```shell
+xhost +
+```
+
+## 容器启动命令
+```shell
+sudo xhost + && sudo docker run --name bulabula -dit --network=host --privileged -v /dev:/dev -e DISPLAY=${DISPLAY} 
+```
+
+## Groot2安装
+```shell
+chmod +x . Groot2-1.3.1-linux-installer.run
+./Groot2-1.3.1-linux-installer.run
+```
+
 ## ToDesk
 [下载链接](https://www.todesk.com/linux.html)
 
