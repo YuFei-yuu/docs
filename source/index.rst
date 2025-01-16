@@ -9,7 +9,5 @@
    :maxdepth: 2
 
    public/index.rst
-   private/index.rst
    contest/index.rst
-
-
+   private/index.rst
