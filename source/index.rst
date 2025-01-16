@@ -10,5 +10,6 @@
 
    public/index.rst
    private/index.rst
+   contest/index.rst
 
 
