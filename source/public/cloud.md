@@ -13,6 +13,7 @@
     - 设置合适的参数 (25,1 作为参考) 然后 apply
 4. 在左侧面板选中上一步处理得到的点云, 点击 tools->segmentation->Label Connected Components, 设置合适的参数然后 apply
 5. 上一步会生成一系列点云，在其中选中想要的，删除不要的，合并他们
+   - 感觉直接cut更好用
 6. 选中合并好的点云，点击 ``tools->Other->Remove duplicate points``, 每 0.01-0.1m 保留一个点，减小点云的大小
 7. 选中处理完的点云，点击 file->save as, 选择 .pcd format，保存
 
@@ -28,3 +29,14 @@
     ros2 run nav2_map_server map_saver_cli -t /projected_map -f test_map --fmt png
     ```
     - 这个有问题 用ps吧
+
+## 决策标点
+1. 
+    ```shell
+    ros2 launch sentry_bringup navigation.launch.py
+    ```
+2. 
+    ```shell
+    ros2 topic echo /clicked_point
+    ```
+3. 在出现的2D地图中，用publish point选点，终端会打印对应的xyz坐标
