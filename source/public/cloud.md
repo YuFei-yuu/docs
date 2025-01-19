@@ -1,5 +1,15 @@
 # 点云处理
 
+容器内外传递文件：
+
+```shell
+docker cp 4d3bc3433f4e:/home/sentry_ws/test_map.png /home/scurm/Downloads/
+```
+
+```shell
+docker cp /home/scurm/Downloads/test_map.png 4d3bc3433f4e:/home/sentry_ws/
+```
+
 ## CloudCompare
 
 [下载链接](https://cloudcompare-org.danielgm.net/release/
