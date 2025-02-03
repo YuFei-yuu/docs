@@ -6,6 +6,7 @@
 .. toctree::
    :maxdepth: 1
 
+   list.md
    docker.md
    cloud.md
    lidar.md
