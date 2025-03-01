@@ -64,6 +64,12 @@ docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -
 ```
 在I:/rm文件夹中挂载data
 
+25.3.1更新
+``` bash
+docker run -it --name 25nav --ipc=host --net=host --privileged -e DISPLAY=${DISPLAY} -v F:\yu:/data g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav:0301 bash
+```
+
+
 **终端连接到容器：**
 ```shell
 docker attach rm
