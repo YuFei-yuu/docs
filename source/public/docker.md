@@ -73,15 +73,19 @@
 
 退出容器：exit
 
-**[图形化](https://blog.csdn.net/zhouzhiwengang/article/details/139729949)**
+### 图形化界面
+
+[参考教程](https://blog.csdn.net/zhouzhiwengang/article/details/139729949)
 
     echo "export DISPLAY=192.168.18.1:0.0" >> ~/.bashrc
     source ~/.bashrc
     Xlaunch启动时display number改成0；
     ipconfig改成本机ip
 
-**二轮期间更新：上面的通通不要管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)
-（此时不要改bashrc不然反而出问题**
+二轮期间更新：上面这些什么bashrc完全不用管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)<BR>
+（此时不要改bashrc不然反而出问题
+
+---
 
 **25.3.2 图形化界面启动不成功解决方案**
 
@@ -103,12 +107,13 @@ export DISPLAY=host.docker.internal:0.0
 ```
 然后就好了，是不是非常的简单~
 
-
+<BR>
 
 X11apps 测试用
 ```shell
-    apt-get update && apt-get install -y x11-apps
+apt-get update && apt-get install -y x11-apps
 ```
+<BR>
 
 ---
 
