@@ -66,11 +66,10 @@
  ```
 
 
-在I:/rm文件夹中挂载data
+在I:/rm文件夹中挂载data<BR>
     docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -v F:\rm:/data huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408 bash
 
-终端连接到容器：
-docker attach rm
+终端连接到容器：docker attach rm
 
 退出容器：exit
 
@@ -83,6 +82,27 @@ docker attach rm
 
 **二轮期间更新：上面的通通不要管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)
 （此时不要改bashrc不然反而出问题**
+
+**25.3.2 图形化界面启动不成功解决方案**
+
+尽管在启动命令里加了DISPLAY，但容器还是无法连接到xlaunch，出现以下报错：
+
+``` 
+root@docker-desktop:/home/sentry_ws# rqt
+could not connect to display :0.0
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, xcb.
+
+root@docker-desktop:/home/sentry_ws# echo $DISPLAY
+:0.0
+```
+理论上来讲这是可以通过改dockerfile来解决的，但很菜的本人显然不会，所以手动改一下容器吧
+
+``` bash
+export DISPLAY=host.docker.internal:0.0
+```
+然后就好了，是不是非常的简单~
+
 
 
 X11apps 测试用
