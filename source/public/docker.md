@@ -58,33 +58,30 @@
         exit
 
 
-**启动命令:**
-```shell
-docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -v F:\rm:/data huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408 bash
-```
-在I:/rm文件夹中挂载data
+### 启动命令:
 
-25.3.1更新
+**25.3.1更新**
 ``` bash
-docker run --name 241108nav --gpus all -dit --ipc=host --net=host --privileged -e DISPLAY=host.docker.internal:0.0 -e NVIDIA_DRIVER_CAPABILITIES=all -v g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav:0301
-```
+ docker run --name 25nav --gpus all -dit --ipc=host --net=host --privileged -e DISPLAY=host.docker.internal:0.0 -e NVIDIA_DRIVER_CAPABILITIES=all -v F:\yu:/data g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav:0301
+ ```
 
 
-**终端连接到容器：**
-```shell
+在I:/rm文件夹中挂载data
+    docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -v F:\rm:/data huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408 bash
+
+终端连接到容器：
 docker attach rm
-```
 
-**退出容器：exit**
+退出容器：exit
 
-[图形化](https://blog.csdn.net/zhouzhiwengang/article/details/139729949)
+**[图形化](https://blog.csdn.net/zhouzhiwengang/article/details/139729949)**
 
     echo "export DISPLAY=192.168.18.1:0.0" >> ~/.bashrc
     source ~/.bashrc
-Xlaunch启动时display number改成0；
-ipconfig改成本机ip
+    Xlaunch启动时display number改成0；
+    ipconfig改成本机ip
 
-**二轮期间更新：上面的通通不要管，直接改启动命令：--ipc=host --net=host
+**二轮期间更新：上面的通通不要管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)
 （此时不要改bashrc不然反而出问题**
 
 
