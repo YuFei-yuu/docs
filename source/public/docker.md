@@ -66,7 +66,7 @@ docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -
 
 25.3.1更新
 ``` bash
-docker run -it --name 25nav --ipc=host --net=host --privileged -e DISPLAY=${DISPLAY} -v F:\yu:/data g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav:0301 bash
+docker run --name 241108nav --gpus all -dit --ipc=host --net=host --privileged -e DISPLAY=host.docker.internal:0.0 -e NVIDIA_DRIVER_CAPABILITIES=all -v g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav:0301
 ```
 
 
