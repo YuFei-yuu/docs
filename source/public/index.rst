@@ -12,4 +12,5 @@
    lidar.md
    nuc.md
    todo.md
+   rosbag2.md
 
