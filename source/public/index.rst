@@ -13,4 +13,5 @@
    nuc.md
    todo.md
    rosbag2.md
+   params.md
 
