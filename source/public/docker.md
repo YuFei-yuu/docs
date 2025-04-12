@@ -2,7 +2,7 @@
 
 ## 配置docker环境
 
-参考：
+### 参考：
 
 [学姐的馈赠](https://polaris-notebook.readthedocs.io/zh-cn/latest/develop/Docker/docker.html)
 
@@ -12,18 +12,31 @@
 
 [CSDN-Windows安装Docker并创建Ubuntu环境](https://blog.csdn.net/laoxue123456/article/details/133526607)
 
+#### Windows下安装docker
+
 安装过程状况百出……没有Hv和容器选项需要自己写.bat文件下载
+
+**250413更新**：docker默认用wsl2运行而不再需要下载HyperV了，在本人的老古董surface里安这Hv直接给我古董干没了：）我的40h星露谷存档：）））<BR>
+all you need is：<img src="./pic/wsl2.png"><BR>
+[参考](https://blog.csdn.net/deng_zhihao692817/article/details/129270111)<BR>
+<font color="grey">不过上述是在win10下安装时发现的，在win11看了一眼系统功能似乎没有虚拟机平台这个选项，但理论上来讲应该依旧是不需要Hv的（等哪天闲心大发说不定征用一个win11再配一次看看，没更新就自己试一下吧）</font>
 
 在users\hp里要写个.wslconfig文件（似乎网络相关
 
 [下载Xlaunch](https://blog.csdn.net/zhouzhiwengang/article/details/139729949)
 
-从coding拉取镜像登录用户名是邮箱 docker login huoguozhandui-docker.pkg.coding.net
+从coding拉取镜像登录用户名是邮箱
+```bash
+docker login huoguozhandui-docker.pkg.coding.net
+```
+
+拉取命令：
+```bash
+docker pull huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408
+```
 
 
-拉取命令：docker pull huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408
-
-
+环境测试：
 
     PS C:\Windows\system32> docker pull ubuntu
     Using default tag: latest
@@ -57,21 +70,27 @@
     root@28fc2e21cac7:/#exit
         exit
 
+### VScode配置
+不确定每个插件都有用，但安都安了：
+<img src="./pic/extension.png">
+
 
 ### 启动命令:
 
-**25.3.1更新**
+#### 25.3.1更新
 ``` bash
  docker run --name 25nav --gpus all -dit --ipc=host --net=host --privileged -e DISPLAY=host.docker.internal:0.0 -e NVIDIA_DRIVER_CAPABILITIES=all -v F:\yu:/data g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav:0301
- ```
+```
 
-
-在I:/rm文件夹中挂载data<BR>
+在I:/rm文件夹中挂载data
+```bash
     docker run -it --name rm_try --network=host --privileged -e DISPLAY=${DISPLAY} -v F:\rm:/data huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm_sentry:latest0408 bash
+```
 
-终端连接到容器：docker attach rm
+终端连接到容器：docker attach <docker_name>
 
 退出容器：exit
+
 
 ### 图形化界面
 
@@ -82,14 +101,14 @@
     Xlaunch启动时display number改成0；
     ipconfig改成本机ip
 
-二轮期间更新：上面这些什么bashrc完全不用管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)<BR>
+#### 二轮期间更新：上面这些什么bashrc完全不用管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)<BR>
 （此时不要改bashrc不然反而出问题
 
 ---
 
-**25.3.2 图形化界面启动不成功解决方案**
+#### 25.3.2：图形化界面启动不成功解决方案
 
-尽管在启动命令里加了DISPLAY，但容器还是无法连接到xlaunch，出现以下报错：
+尽管在启动命令里加了`-e DISPLAY=host.docker.internal:0.0`，但容器还是无法连接到xlaunch，出现以下报错：
 
 ``` 
 root@docker-desktop:/home/sentry_ws# rqt
@@ -100,12 +119,31 @@ Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, 
 root@docker-desktop:/home/sentry_ws# echo $DISPLAY
 :0.0
 ```
-理论上来讲这是可以通过改dockerfile来解决的，但很菜的本人显然不会，所以手动改一下容器吧
+理论上来讲这是可以通过改dockerfile来解决的，但很菜的本人显然不会，所以手动在容器里做修改吧
 
 ``` bash
 export DISPLAY=host.docker.internal:0.0
 ```
 然后就好了，是不是非常的简单~
+
+#### 25.4.12：上面问题的解决办法
+哎，帅神，感谢帅神对本栏目的大力支持，不然主播还在天天狂敲命令：） ~~又名本人实在是太菜好在隔壁工位哒哥有实力，下辈子一定要好好学好吗好的~~
+
+- 首先是怎么解决每次启动容易都要输那一段的问题：<BR>
+在`/root/.bashrc`中加一句
+    ```BASH
+    export DISPLAY=host.docker.internal:0.0
+    ```
+    ~~只能说实在是太铸币了，每次启动一次容器都要敲一遍愣是这么久了还是被提醒了才想起来bashrc的事情，难蚌~~
+
+- 其次是为什么会出现上面的问题：<BR>
+在从小电脑打包系统时，小电脑内的bashrc是这样的：
+    ```BASH
+    export DISPLAY=internal:0.0
+    ```
+    然而：[参考](https://www.cnblogs.com/larva-zhh/p/10531824.html)
+    <img src="./pic/display.png">
+    略感难蚌，所以只需要改一下bashrc再重新source就可以不用每次启动容器重新敲指令了
 
 <BR>
 
@@ -117,7 +155,7 @@ apt-get update && apt-get install -y x11-apps
 
 ---
 
-### 24.9.15更新：docker镜像存储位置问题
+### 24.9.15：docker镜像存储位置问题
 直接手改，复制粘贴删除一气呵成，亲测有效()
 
 下载好desktop之后在设置里就会有一个镜像存储路径（本人是C:\Users\hp\AppData\Local\Docker\wsl
