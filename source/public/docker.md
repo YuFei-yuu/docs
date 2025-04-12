@@ -12,12 +12,12 @@
 
 [CSDN-Windows安装Docker并创建Ubuntu环境](https://blog.csdn.net/laoxue123456/article/details/133526607)
 
-#### Windows下安装docker
+### Windows下安装docker
 
 安装过程状况百出……没有Hv和容器选项需要自己写.bat文件下载
 
 **250413更新**：docker默认用wsl2运行而不再需要下载HyperV了，在本人的老古董surface里安这Hv直接给我古董干没了：）我的40h星露谷存档：）））<BR>
-all you need is：<img src="./pic/wsl2.png"><BR>
+all you need is：<BR><img src="./pic/wsl2.png"><BR>
 [参考](https://blog.csdn.net/deng_zhihao692817/article/details/129270111)<BR>
 <font color="grey">不过上述是在win10下安装时发现的，在win11看了一眼系统功能似乎没有虚拟机平台这个选项，但理论上来讲应该依旧是不需要Hv的（等哪天闲心大发说不定征用一个win11再配一次看看，没更新就自己试一下吧）</font>
 
@@ -70,8 +70,8 @@ docker pull huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm
     root@28fc2e21cac7:/#exit
         exit
 
-### VScode配置
-不确定每个插件都有用，但安都安了：
+### VScode配置:
+不确定每个插件都有用，但安都安了：<BR>
 <img src="./pic/extension.png">
 
 
@@ -92,7 +92,7 @@ docker pull huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm
 退出容器：exit
 
 
-### 图形化界面
+### 图形化界面:
 
 [参考教程](https://blog.csdn.net/zhouzhiwengang/article/details/139729949)
 
@@ -101,10 +101,8 @@ docker pull huoguozhandui-docker.pkg.coding.net/24vision_nav/sentry_dockerhub/rm
     Xlaunch启动时display number改成0；
     ipconfig改成本机ip
 
-#### 二轮期间更新：上面这些什么bashrc完全不用管，直接改启动命令：--ipc=host --net=host(参照25.3.1更新)<BR>
-（此时不要改bashrc不然反而出问题
-
----
+#### 二轮期间更新：
+不用管上面这些什么bashrc，上面这些已经在镜像里改好了，只需改启动命令：--ipc=host --net=host(参照25.3.1更新)
 
 #### 25.3.2：图形化界面启动不成功解决方案
 
@@ -143,26 +141,22 @@ export DISPLAY=host.docker.internal:0.0
     ```
     然而：[参考](https://www.cnblogs.com/larva-zhh/p/10531824.html)
     <img src="./pic/display.png">
-    略感难蚌，所以只需要改一下bashrc再重新source就可以不用每次启动容器重新敲指令了
+    略感难蚌，所以只需要改一下bashrc再重新source就可以不用每次启动容器重新敲指令了，但更改bashrc后的系统懒得再重新打包镜像了，拉取下来之后手动吧
 
-<BR>
-
-X11apps 测试用
+#### X11apps
+测试用
 ```shell
 apt-get update && apt-get install -y x11-apps
 ```
-<BR>
-
----
 
 ### 24.9.15：docker镜像存储位置问题
 直接手改，复制粘贴删除一气呵成，亲测有效()
 
-下载好desktop之后在设置里就会有一个镜像存储路径（本人是C:\Users\hp\AppData\Local\Docker\wsl
+下载好desktop之后在设置里就会有一个镜像存储路径（本人是`C:\Users\hp\AppData\Local\Docker\wsl`
 
-先尝试一下直接点browse，能改的话万事大吉但我估计大概率不行，会显示docker_data.vhdx无法移动，推测原因是打开了desktop这个文件就会开始运行然后就没法移动了
+先尝试一下直接点browse，能改的话万事大吉但目前看来大概率不行，会显示`docker_data.vhdx`无法移动，推测原因是打开了desktop这个文件就会开始运行然后就没法移动了
 
-1. 终止所有容器，完全关闭desktop，可以用wsl --list -v测试
-2. 把C:\Users\hp\AppData\Local\Docker\wsl\disk目录下的docker_data.vhdx移动到你需要的路径下（如F:\Docker\DockerDesktopWSL）
-3. 把原来的docker_data.vhdx删除（注意main文件夹下ext4.vhdx不要动，至少本人动他就会定位不到，反正这个也就138MB留着他吧还是另一个.vhdx比较占空间
-4. 重新启动desktop，把设置里的路径更改到F盘，再重启看启动界面的镜像和容器有没有丢失。如果在设置里更改路径的时候显示比如说什么该文件夹下DockerDesktopWSL已存在之类的，善用文件夹重命名反复移动一下，最终只要实现了把docker_data.vhdx塞到DockerDesktopWSL\disk下且设置里定位的位置是F:\Docker\DockerDesktopWSL就没问题
+1. 终止所有容器，完全关闭desktop，可以用`wsl --list -v`测试
+2. 把`C:\Users\hp\AppData\Local\Docker\wsl\disk`目录下的`docker_data.vhdx`移动到你需要的路径下（如`F:\Docker\DockerDesktopWSL`）
+3. 把原来的`docker_data.vhdx`删除（注意main文件夹下`ext4.vhdx`不要动，至少本人动他就会定位不到，反正这个也就138MB留着他吧还是其他.vhdx比较占空间
+4. 重新启动desktop，把设置里的路径更改到F盘，再重启看启动界面的镜像和容器有没有丢失。如果在设置里更改路径的时候显示比如说什么该文件夹下DockerDesktopWSL已存在之类的，善用文件夹重命名反复移动一下，最终只要实现了把`docker_data.vhdx`塞到`DockerDesktopWSL\disk`下且设置里定位的位置是`F:\Docker\DockerDesktopWSL`就没问题
