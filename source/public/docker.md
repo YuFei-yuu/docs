@@ -140,7 +140,7 @@ export DISPLAY=host.docker.internal:0.0
     export DISPLAY=internal:0.0
     ```
     然而：[参考](https://www.cnblogs.com/larva-zhh/p/10531824.html)
-    <img src="./pic/display.png">
+    <img src="./pic/display.png"><BR>
     略感难蚌，所以只需要改一下bashrc再重新source就可以不用每次启动容器重新敲指令了，但更改bashrc后的系统懒得再重新打包镜像了，拉取下来之后手动吧
 
 #### X11apps
