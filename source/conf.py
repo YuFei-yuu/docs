@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'FlyingFish'
-copyright = 'v0.1'
+copyright = 'v0.25.04'
 author = 'yu'
 
 # -- General configuration ---------------------------------------------------

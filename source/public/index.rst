@@ -8,6 +8,7 @@
 
    list.md
    docker.md
+   dockerre.md
    cloud.md
    lidar.md
    nuc.md
