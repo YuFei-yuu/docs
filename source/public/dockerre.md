@@ -43,17 +43,25 @@
 6. 更改镜像存储路径:右上角设置->Resources->Advanced->Disk image location->选择你希望的文件夹->Browse
 
 ## 下载图形化显示软件
-1. [下载VcXsrv]https://sourceforge.net/projects/vcxsrv/
+1. [下载VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 2. 运行installer
 3. 运行Xlaunch，选择Next->Next->勾选`Disable access control`->Next->Finish
    
     此后每当你需要图形化显示时，确认自己电脑中运行着VcXsrv
 
 ## 测试环境
+1. 测试docker
+    ```shell
     docker pull ubuntu
     docker run -it --name test1 ubuntu
     docker ps -a
-能正常拉取镜像、创建容器就差不多了
+    ```
+    能正常拉取镜像、创建容器就差不多了
+2. 下载X11apps测试图形化显示：
+    ```shell
+    apt-get update && apt-get install -y x11-apps
+    ```
+
 
 ## 配置VScode远程连接
 1. 安装如下插件：
