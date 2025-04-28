@@ -25,18 +25,19 @@
     ```python
     ld.add_action(mid360_node)  # 接入雷达，用录下来的包的点云时注释掉
     ```
-2. 输出发布点的坐标
+2. 启动重定位
     ```bash
-    ros2 topic echo /clicked_point
+    ros2 launch sentry_bringup relocalization.launch.py
     ```
 3. 播放录制下来的点云
     ```bash
     ros2 bag play /filepath/file.db3
     ```
-4. 启动重定位
+4. 输出发布点的坐标
     ```bash
-    ros2 launch sentry_bringup relocalization.launch.py
+    ros2 topic echo /clicked_point
     ```
+
 5. 开始重定位，等到换边的地方publish point，记录播放到这里经过的秒数
 
 ## 换边

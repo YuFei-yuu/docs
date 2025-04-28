@@ -10,7 +10,11 @@ xhost +
 
 ## 容器启动命令
 ```shell
-sudo xhost + && sudo docker run --name bulabula -dit --network=host --privileged -v /dev:/dev -e DISPLAY=${DISPLAY} 
+sudo xhost + && sudo docker run --name bulabula -dit --network=host --privileged -v /dev:/dev -e DISPLAY=${DISPLAY} [image_name:tag]
+```
+**25.4.29更新**
+```shell
+sudo xhost + && sudo docker run --name 25nav2 -dit --ipc=host --net=host --privileged -v /dev:/dev -e DISPLAY=${DISPLAY} g-dvxc1780-docker.pkg.coding.net/25nav/docker/25nav2:0425
 ```
 
 ## Groot2安装
@@ -71,6 +75,8 @@ chmod +x . Groot2-1.3.1-linux-installer.run
 - Savr Typing
 - Serial Monitor
 - vscode-pdf
+
+以及记得开自动保存：）
 
 ## 一些没用的小技巧
 - Ctrl+shift+C/V 终端中复制粘贴
