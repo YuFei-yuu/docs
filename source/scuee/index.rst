@@ -6,3 +6,6 @@
 .. toctree::
    :maxdepth: 1
 
+   K20/index.rst
+   ROS/index.rst
+   private/index.rst
