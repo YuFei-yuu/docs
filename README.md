@@ -1,9 +1,9 @@
-# SCURM KnowledgeBase
+# FlyingFish 个人文档
 
 ## 构建状态
 
 [ReadTheDOCS](https://readthedocs.org/projects/flyingfish/)<BR>
-[一只飞鱼](https://scurm-knowledgebase.readthedocs.io/zh/latest/)
+[一只飞鱼](https://flyingfish.readthedocs.io/zh-cn/latest/)
 
 ## 使用方式
 
@@ -23,6 +23,7 @@
    ```
 
 ## 一些命令
+
 ``` shell
 ./make html #在本地.\build\html\index.html预览
 ```

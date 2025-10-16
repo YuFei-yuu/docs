@@ -2,12 +2,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-自求多福~
+客观外面请~
 ===============================================
 
 .. toctree::
    :maxdepth: 2
 
-   .. public/index.rst
-   .. contest/index.rst
-   .. private/index.rst
+   rm/index.rst
+   scuee/index.rst
