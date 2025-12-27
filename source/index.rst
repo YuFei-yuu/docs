@@ -2,11 +2,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-客观外面请~
+客官外面请~
 ===============================================
 
 .. toctree::
    :maxdepth: 2
 
-   rm/index.rst
+   rm2025/index.rst
+   rm2026/index.rst
    scuee/index.rst
+   nav/index.rst
