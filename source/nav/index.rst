@@ -8,3 +8,4 @@ Re：从0开始的具身入门
 
    reading/index.rst
    etc/index.rst
+   record/index.rst
