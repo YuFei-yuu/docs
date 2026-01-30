@@ -7,6 +7,7 @@
    :maxdepth: 1
 
    w1.md
+   w2.md
 
 
 
